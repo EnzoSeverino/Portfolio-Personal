@@ -1,0 +1,602 @@
+/* ===================================================
+    1. VARIABLES
+   =================================================== */
+:root {
+    /* --- 1.1. Colores --- */
+    --color-fondo: #0F172A; 
+    --color-tarjeta: #1E293B; 
+    --color-texto-principal: #F1F5F9; 
+    --color-texto-secundario: #94A3B8; 
+    --color-acento: #22D3EE; 
+    --color-borde: #334155; 
+    --color-negro: #000000; 
+
+    /* --- 1.2. Espaciado --- */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-7: 30px;
+    --space-8: 40px;
+    --space-9: 60px;
+    --space-10: 100px;
+
+    /* --- 1.3. Radios de Borde --- */
+    --radio-chico: 8px;
+    --radio-medio: 15px;
+    --radio-grande: 20px;
+    --radio-pildora: 50px;
+    --radio-circulo: 50%;
+}
+
+/* ===================================================
+    2. ESTILOS GENERALES
+   =================================================== */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto-principal);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.resaltado {
+    color: var(--color-acento);
+}
+
+/* ===================================================
+    3. HEADER / INICIO
+   =================================================== */
+header {
+    padding-top: var(--space-10);
+    padding-bottom: var(--space-9);
+    padding-left: var(--space-5);
+    padding-right: var(--space-5);
+    text-align: center;
+}
+
+.header-contenido {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: var(--space-8);
+}
+
+header h1 {
+    font-size: 56px;
+}
+
+header .subtitulo {
+    font-size: 18px;
+    color: var(--color-texto-secundario);
+    line-height: 1.6;
+}
+
+.botones-header {
+    margin-top: var(--space-7);
+}
+
+.btn {
+    display: inline-block;
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radio-pildora);
+    text-decoration: none;
+    font-weight: bold;
+    margin: var(--space-1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    font-family: inherit;
+}
+
+.btn-principal {
+    background-color: var(--color-acento);
+    color: var(--color-negro); 
+}
+
+.btn-secundario {
+    background-color: var(--color-tarjeta);
+    color: var(--color-texto-principal);
+}
+
+.btn-icon {
+    background-color: var(--color-tarjeta);
+    color: var(--color-texto-principal);
+    width: 45px;
+    height: 45px;
+    border-radius: var(--radio-circulo);
+    font-size: 20px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.btn:hover, .btn-icon:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 var(--space-3);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-texto-secundario);
+    background-color: var(--color-tarjeta);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radio-grande);
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--color-acento);
+    color: var(--color-negro);
+}
+
+/* ===================================================
+    4. SECCIÓN PROYECTOS
+   =================================================== */
+#proyectos {
+    padding: var(--space-9) var(--space-5);
+}
+
+#proyectos h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: var(--space-8);
+}
+
+.proyectos-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-6);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.proyecto-card {
+    background-color: var(--color-tarjeta);
+    border-radius: var(--radio-medio);
+    padding: var(--space-6);
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proyecto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(34, 211, 238, 0.2);
+}
+
+.proyecto-icono {
+    width: 50px;
+    height: 50px;
+    margin-bottom: var(--space-4);
+}
+
+.proyecto-card h3 {
+    font-size: 22px;
+    margin-bottom: var(--space-3);
+}
+
+.proyecto-card p {
+    color: var(--color-texto-secundario);
+    font-size: 16px;
+    line-height: 1.5;
+    flex-grow: 1;
+    margin-bottom: var(--space-5);
+}
+
+.proyecto-tecnologias {
+    margin-bottom: var(--space-5);
+}
+
+.proyecto-tecnologias span {
+    background-color: rgba(34, 211, 238, 0.1);
+    color: var(--color-acento);
+    border: 1px solid rgba(34, 211, 238, 0.3);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radio-medio);
+    font-size: 12px;
+    margin-right: var(--space-1);
+    display: inline-block;
+    margin-bottom: var(--space-1);
+}
+
+.proyecto-botones {
+    display: flex;
+    gap: var(--space-3);
+}
+
+.proyecto-botones .btn {
+    padding: var(--space-2) var(--space-5);
+    font-size: 14px;
+}
+
+.btn-detalle {
+    background-color: var(--color-borde);
+    color: var(--color-texto-principal);
+}
+
+.btn-detalle:hover {
+    background-color: var(--color-acento);
+    color: var(--color-negro);
+}
+
+.btn-demo {
+    background-color: transparent;
+    color: var(--color-acento);
+    border: 2px solid var(--color-acento);
+}
+
+.btn-demo:hover {
+    background-color: var(--color-acento);
+    color: var(--color-negro);
+}
+
+/* ===================================================
+    5. SECCIÓN HABILIDADES
+   =================================================== */
+#habilidades {
+    padding: var(--space-9) var(--space-5);
+}
+
+#habilidades h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: var(--space-8);
+}
+
+.habilidades-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-5);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.habilidad-item {
+    background-color: var(--color-tarjeta); 
+    border-radius: var(--radio-medio);
+    width: 150px;
+    padding: var(--space-5);
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.habilidad-item:hover {
+    transform: translateY(-5px);
+}
+
+.habilidad-item img {
+    width: var(--space-9);
+    height: var(--space-9);
+    margin-bottom: var(--space-4);
+}
+
+.habilidad-item p {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 var(--space-3) 0;
+}
+
+.habilidad-item span {
+    color: var(--color-acento);
+    font-size: 14px;
+    font-weight: bold;
+    background-color: rgba(34, 211, 238, 0.1);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radio-medio);
+    border: 1px solid rgba(34, 211, 238, 0.3);
+}
+
+/* ===================================================
+    6. SECCIÓN EXPERIENCIA
+   =================================================== */
+#experiencia {
+    padding: var(--space-9) var(--space-5);
+}
+
+#experiencia h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: var(--space-8);
+}
+
+.experiencia-lista {
+    list-style: none;
+    padding: 0;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.experiencia-lista li {
+    background-color: var(--color-tarjeta);
+    padding: var(--space-5) var(--space-7);
+    border-radius: var(--radio-medio);
+    margin-bottom: var(--space-7);
+    border-left: 3px solid var(--color-borde);
+    position: relative;
+}
+
+.experiencia-lista li::before {
+    content: '';
+    position: absolute;
+    left: -11px;
+    top: 25px;
+    width: var(--space-5);
+    height: var(--space-5);
+    background-color: var(--color-acento);
+    border-radius: var(--radio-circulo);
+    border: 3px solid var(--color-fondo);
+}
+
+.experiencia-lista li:nth-child(2)::before {
+    background-color: #A78BFA; 
+}
+
+.experiencia-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-3);
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+.experiencia-header h3 {
+    margin: 0;
+    font-size: 20px;
+    color: var(--color-texto-principal);
+}
+
+.experiencia-header span {
+    color: var(--color-texto-secundario);
+    font-size: 14px;
+    background-color: var(--color-fondo);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--space-1);
+    white-space: nowrap;
+}
+
+.experiencia-lista li p {
+    margin: 0;
+    color: var(--color-texto-secundario);
+    line-height: 1.6;
+}
+
+/* ===================================================
+    7. SECCIÓN CONTACTO
+   =================================================== */
+#contacto {
+    padding: var(--space-9) var(--space-5);
+}
+
+.contacto-header {
+    max-width: 800px;
+    margin: 0 auto var(--space-8) auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+}
+
+#contacto h2 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.contacto-header p {
+    color: var(--color-texto-secundario);
+    margin: 0;
+}
+
+.formulario-contacto {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--color-tarjeta); 
+    padding: var(--space-7);
+    border-radius: var(--radio-medio);
+}
+
+.form-row {
+    display: flex;
+    gap: var(--space-5);
+    margin-bottom: var(--space-5);
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.campo label {
+    margin-bottom: var(--space-2);
+    color: var(--color-texto-secundario);
+}
+
+.campo input,
+.campo textarea {
+    background-color: var(--color-fondo); 
+    border: 2px solid var(--color-borde);
+    border-radius: var(--radio-chico);
+    padding: var(--space-3);
+    color: var(--color-texto-principal);
+    font-size: 16px;
+    font-family: inherit;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: var(--color-acento);
+}
+
+.campo textarea {
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: var(--space-5);
+}
+
+/* ===================================================
+    8. FOOTER
+   =================================================== */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-5) var(--space-8);
+    margin-top: var(--space-8);
+    border-top: 1px solid var(--color-borde);
+    background-color: var(--color-fondo);
+}
+
+footer p {
+    margin: 0;
+    color: var(--color-texto-secundario);
+    font-size: 14px;
+}
+
+.footer-links {
+    display: flex;
+    gap: var(--space-5);
+}
+
+.footer-links a {
+    color: var(--color-texto-secundario);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--color-acento);
+}
+
+.footer-links a.copiado {
+    color: var(--color-acento);
+    font-weight: bold;
+}
+
+/* ===================================================
+    9. MEDIA QUERIES (RESPONSIVE)
+   =================================================== */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 42px;
+    }
+    
+    #proyectos h2,
+    #habilidades h2,
+    #experiencia h2,
+    #contacto h2 {
+        font-size: 30px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+    }
+
+    .contacto-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    footer {
+        flex-direction: column;
+        gap: var(--space-4);
+        padding: var(--space-5);
+        text-align: center;
+    }
+
+    .experiencia-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .experiencia-header span {
+        margin-top: var(--space-2);
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding-top: var(--space-9);
+        padding-bottom: var(--space-9);
+    }
+    
+    header h1 {
+        font-size: 36px;
+    }
+
+    header .subtitulo {
+        font-size: 16px;
+    }
+    
+    .botones-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-3);
+    }
+
+    .botones-header .btn,
+    .botones-header .btn-icon {
+        width: auto;
+        min-width: 150px;
+    }
+    
+    #proyectos,
+    #habilidades,
+    #experiencia,
+    #contacto {
+        padding: var(--space-8) var(--space-4);
+    }
+    
+    .proyecto-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .formulario-contacto {
+        padding: var(--space-5);
+    }
+
+    nav li {
+        margin: 0 var(--space-2);
+    }
+
+    nav a {
+        font-size: 14px;
+        padding: var(--space-2) var(--space-3);
+    }
+}
