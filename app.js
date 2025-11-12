@@ -27,48 +27,25 @@ if (linkEmail) {
 }
 
 // ===================================================
-// FUNCIONALIDAD: Envío del formulario de contacto
+// FUNCIONALIDAD: Envío del formulario de contacto con Formspree
 // ===================================================
 const formulario = document.querySelector('.formulario-contacto');
 
 if (formulario) {
     formulario.addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        const nombre = document.getElementById('nombre').value;
-        const email = document.getElementById('email').value;
-        const mensaje = document.getElementById('mensaje').value;
-        
-        // Validación básica
-        if (!nombre || !email || !mensaje) {
-            alert('Por favor completa todos los campos');
-            return;
-        }
-
-        // Crear el enlace mailto con los datos del formulario
-        const subject = encodeURIComponent(`Contacto de ${nombre}`);
-        const body = encodeURIComponent(`Nombre: ${nombre}\nEmail: ${email}\n\nMensaje:\n${mensaje}`);
-        const mailtoLink = `mailto:severinoenzo0@gmail.com?subject=${subject}&body=${body}`;
-        
-        // Abrir cliente de correo
-        window.location.href = mailtoLink;
-        
-        // Mostrar confirmación visual
         const boton = formulario.querySelector('button[type="submit"]');
         const textoOriginal = boton.textContent;
-        const colorOriginal = boton.style.backgroundColor;
         
-        boton.textContent = '✓ ¡Mensaje enviado!';
-        boton.style.backgroundColor = '#10b981'; // Verde
+        // Mostrar estado de envío
+        boton.textContent = 'Enviando...';
         boton.disabled = true;
         
-        // Resetear después de 3 segundos
+        // Formspree se encarga del envío, pero agregamos feedback visual
+        // El formulario se enviará normalmente con el action de Formspree
         setTimeout(() => {
-            boton.textContent = textoOriginal;
-            boton.style.backgroundColor = colorOriginal;
-            boton.disabled = false;
-            formulario.reset();
-        }, 3000);
+            boton.textContent = '✓ ¡Enviado!';
+            boton.style.backgroundColor = '#10b981';
+        }, 500);
     });
 }
 

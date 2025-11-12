@@ -59,6 +59,7 @@ header {
     padding-left: var(--space-5);
     padding-right: var(--space-5);
     text-align: center;
+    position: relative;
 }
 
 .header-contenido {
@@ -70,12 +71,14 @@ header {
 
 header h1 {
     font-size: 56px;
+    margin: 0;
 }
 
 header .subtitulo {
     font-size: 18px;
     color: var(--color-texto-secundario);
     line-height: 1.6;
+    margin-top: var(--space-5);
 }
 
 .botones-header {
@@ -110,6 +113,8 @@ header .subtitulo {
     color: var(--color-texto-principal);
     width: 45px;
     height: 45px;
+    min-width: 45px;
+    min-height: 45px;
     border-radius: var(--radio-circulo);
     font-size: 20px;
     text-decoration: none;
@@ -117,6 +122,7 @@ header .subtitulo {
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    flex-shrink: 0;
 }
 
 .btn:hover, .btn-icon:hover {
@@ -127,11 +133,12 @@ header .subtitulo {
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 nav li {
     display: inline-block;
-    margin: 0 var(--space-3);
+    margin: var(--space-2);
 }
 
 nav a {
@@ -153,6 +160,7 @@ nav a:hover {
    =================================================== */
 #proyectos {
     padding: var(--space-9) var(--space-5);
+    scroll-margin-top: 60px;
 }
 
 #proyectos h2 {
@@ -257,6 +265,7 @@ nav a:hover {
    =================================================== */
 #habilidades {
     padding: var(--space-9) var(--space-5);
+    scroll-margin-top: 60px;
 }
 
 #habilidades h2 {
@@ -315,6 +324,7 @@ nav a:hover {
    =================================================== */
 #experiencia {
     padding: var(--space-9) var(--space-5);
+    scroll-margin-top: 60px;
 }
 
 #experiencia h2 {
@@ -390,6 +400,7 @@ nav a:hover {
    =================================================== */
 #contacto {
     padding: var(--space-9) var(--space-5);
+    scroll-margin-top: 60px;
 }
 
 .contacto-header {
@@ -569,10 +580,17 @@ footer p {
         gap: var(--space-3);
     }
 
-    .botones-header .btn,
+    .botones-header .btn {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+    }
+
     .botones-header .btn-icon {
-        width: auto;
-        min-width: 150px;
+        width: 45px;
+        height: 45px;
+        min-width: 45px;
+        max-width: 45px;
     }
     
     #proyectos,
@@ -580,6 +598,7 @@ footer p {
     #experiencia,
     #contacto {
         padding: var(--space-8) var(--space-4);
+        scroll-margin-top: 80px;
     }
     
     .proyecto-card {
@@ -591,12 +610,16 @@ footer p {
         padding: var(--space-5);
     }
 
+    nav {
+        margin-top: var(--space-5);
+    }
+
     nav li {
-        margin: 0 var(--space-2);
+        margin: var(--space-1);
     }
 
     nav a {
-        font-size: 14px;
+        font-size: 13px;
         padding: var(--space-2) var(--space-3);
     }
 }
